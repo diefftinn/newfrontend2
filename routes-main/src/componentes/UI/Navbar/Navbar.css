@@ -1,0 +1,195 @@
+/* Navbar.css - Estilo Elegante como Login/Registro */
+:root {
+  --primary: #4CAF50;
+  --primary-hover: #388E3C;
+  --background: rgba(236, 236, 236, 0.9);
+  --text-dark: #2d3748;
+  --text-light: #f8fafc;
+  --border: rgba(0, 0, 0, 0.1);
+  --war: #ff4444;
+    --warHover: #cc0000;
+  --transition: all 0.3s ease;
+  --shadow: 0 15px 60px rgba(0, 0, 0, 0.15);
+}
+
+img {
+  margin-top: 2rem;
+  width: 5rem;
+}
+
+/* Contenedor principal con efecto vidrio */
+nav {
+  width: 20vw;
+  height: 98.9vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: .3rem;
+  border-radius: 10px;
+  align-items: center;
+  padding: 0;
+  background-color: #ececec;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: var(--shadow),
+              0 0 0 1px rgba(255, 255, 255, 0.3) inset;
+  z-index: 1;
+  overflow: hidden;
+  border: solid 1px;
+}
+
+/* Efecto de partículas de fondo */
+
+
+/* Barra superior animada */
+
+
+/* Lista de navegación - Estilo premium */
+nav > ul {
+  text-align: center;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  gap: 1.5rem;
+  font-size: 1.1rem;
+  width: 100%;
+  margin: 0;
+  padding: 2rem 0;
+  list-style: none;
+}
+
+/* Elementos del menú con efecto premium */
+nav > ul > li {
+  transition: var(--transition);
+  width: 80%;
+  text-align: center;
+  position: relative;
+}
+
+nav > ul > li:hover {
+  transform: translateX(5px);
+}
+
+/* Enlaces con estilo idéntico al login */
+nav > ul > li a {
+  color: var(--text-dark);
+  text-decoration: none;
+  display: block;
+  padding: 1rem 1.5rem;
+  width: 100%;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: var(--transition);
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+nav > ul > li a:hover,
+nav > ul > li a.active {
+  background: white;
+  color: var(--primary);
+  box-shadow: 0 5px 25px rgba(76, 175, 80, 0.2);
+}
+
+nav > ul > li a.active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 60%;
+  width: 4px;
+  background: var(--primary);
+  border-radius: 0 4px 4px 0;
+}
+
+/* Botón Cerrar Sesión - Estilo idéntico al login */
+.botonSalir {
+  background: var(--war);
+  color: white;
+  
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: var(--transition);
+  width: 60%;
+  margin-top: 2rem;
+ 
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.botonSalir:hover {
+  transform: scale(1.03);
+  background-color: var(--warHover);
+  box-shadow: 0 5px 25px var(--war);
+}
+
+/* Efecto ripple como en login */
+ .botonSalir::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%);
+  transform-origin: 50% 50%;
+}
+
+.botonSalir:focus:not(:active)::after {
+  animation: ripple 1s ease-out;
+}
+
+/* Animaciones idénticas al login/registro */
+@keyframes float {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(-5%, -5%); }
+  50% { transform: translate(-10%, 0); }
+  75% { transform: translate(-5%, 5%); }
+  100% { transform: translate(0, 0); }
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes ripple {
+  0% { transform: scale(0, 0); opacity: 0.5; }
+  100% { transform: scale(50, 50); opacity: 0; }
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  nav {
+    width: 25vw;
+  }
+}
+
+@media (max-width: 768px) {
+  nav {
+    width: 60vw;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+  
+  nav.active {
+    transform: translateX(0);
+  }
+  
+  nav > ul > li a,
+  nav > ul > li .botonSalir {
+    padding: 0.8rem 1rem;
+    font-size: 0.9rem;
+  }
+}

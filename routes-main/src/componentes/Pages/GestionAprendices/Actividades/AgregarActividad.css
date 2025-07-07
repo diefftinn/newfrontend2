@@ -1,0 +1,541 @@
+/* ===== Contenedor principal ===== */
+.formato-sena-container {
+  font-family: 'Arial', sans-serif;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+}
+
+/* ===== Título del documento y encabezado ===== */
+.document-title {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #2c3e50;
+  line-height: 1.4;
+}
+
+.document-header {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  font-size: 0.875rem;
+  margin-bottom: 20px;
+}
+
+/* ===== Estructura del formulario ===== */
+.sena-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.form-section {
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  padding: 12px;
+}
+
+.form-section h3 {
+  margin: 0 0 8px;
+  font-size: 1rem;
+  color: #2c3e50;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 5px;
+}
+
+/* ===== Filas y campos del formulario ===== */
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.form-group {
+  flex: 1;
+  min-width: 200px;
+  margin-bottom: 8px;
+}
+
+.form-group.wide {
+  flex: 100%;
+}
+
+label {
+  display: block;
+  margin-bottom: 3px;
+  font-weight: bold;
+  font-size: 0.875rem;
+  color: #2c3e50;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="time"],
+select,
+textarea {
+  width: 100%;
+  padding: 6px;
+  font-size: 0.875rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+input[readonly] {
+  background-color: #f0f0f0;
+  cursor: not-allowed;
+}
+
+/* ===== Radios y checkboxes ===== */
+.radio-group,
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  cursor: pointer;
+}
+
+.radio-group {
+  margin-top: 3px;
+  gap: 12px;
+}
+
+.checkbox-label {
+  margin: 0 12px 6px 0;
+  font-weight: normal;
+}
+
+/* ===== ReactQuill ===== */
+.ql-toolbar {
+  border: 1px solid #ddd !important;
+  border-radius: 4px 4px 0 0;
+}
+
+.ql-container {
+  border: 1px solid #ddd !important;
+  border-radius: 0 0 4px 4px;
+  height: 120px;
+  max-height: 120px;
+  overflow-y: auto;
+}
+
+/* ===== Competencias y evidencias ===== */
+.competencies-grid,
+.valoracion-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+  overflow-y: auto;
+}
+
+.competencies-grid {
+  max-height: 200px;
+}
+
+.valoracion-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  max-height: 300px;
+  gap: 12px;
+}
+
+.valoracion-item {
+  background-color: #fff;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+/* ===== Textos y firmas ===== */
+.commitment-text {
+  font-style: italic;
+  color: #555;
+  border-top: 1px solid #ddd;
+  padding-top: 8px;
+  margin-bottom: 12px;
+}
+
+/* ===== Botones ===== */
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 20px;
+  
+  margin-left: 45.5rem;
+}
+
+.submit-button,
+.cancel-button {
+  padding: 8px 16px;
+  border: none;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submit-button {
+  background-color: #27ae60;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #219955;
+  transform: scale(1.03);
+}
+
+.submit-button:disabled {
+  background-color: #95a5a6;
+  cursor: not-allowed;
+}
+
+.cancel-button {
+  background-color: #e74c3c;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.cancel-button:hover {
+  background-color: #c0392b;
+  transform: scale(1.03);
+}
+
+/* ===== Mensajes ===== */
+.error-message,
+.success-message {
+  padding: 8px;
+  margin-top: 12px;
+  border-radius: 4px;
+  border: 1px solid;
+}
+
+.error-message {
+  color: #e74c3c;
+  background-color: #fadbd8;
+  border-color: #f5b7b1;
+}
+
+.success-message {
+  color: #27ae60;
+  background-color: #d5f5e3;
+  border-color: #a3e4d7;
+}
+
+/* ===== Colores por secciones ===== */
+.institutional   { background-color: #eaf2f8; border-color: #3498db; }
+.general-info    { background-color: #e8f8f5; border-color: #1abc9c; }
+.personal-data   { background-color: #fef9e7; border-color: #f39c12; }
+.results         { background-color: #f5eef8; border-color: #9b59b6; }
+.activities      { background-color: #ebf5fb; border-color: #5dade2; }
+.signatures      { background-color: #fdedec; border-color: #e74c3c; }
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .formato-sena-container {
+    padding: 15px;
+    max-height: 100vh;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .form-group {
+    min-width: 100%;
+  }
+
+  .radio-group {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .valoracion-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ql-container {
+    height: 100px;
+  }
+
+  .competencies-grid,
+  .valoracion-grid {
+    max-height: 250px;
+  }
+}
+
+.header-with-logo{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.sena-logo{
+  width: 5rem;
+  opacity: 60%;
+}
+
+.codigo{
+  opacity: 60%;
+}
+
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+/* Contenedor del modal */
+.modal-content {
+  font-family: 'Arial', sans-serif;
+  max-width: 95%;
+  max-height: 90vh;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #fff;
+  animation: fadeIn 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+}
+
+/* Estilos para la sección de asistentes */
+.form-section1 {
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  padding: 12px;
+  margin-bottom: 20px;
+}
+
+/* Asegurar que el contenedor no se desborde */
+.form-section1 > * {
+  max-width: 100%;
+}
+
+.form-section1 h3 {
+  margin: 0 0 12px;
+  font-size: 1rem;
+  color: #2c3e50;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 5px;
+}
+
+/* Tabla de asistentes */
+.sena-table{
+  
+  margin-left: 3rem;
+}
+
+.sena-table1 {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+  table-layout: fixed; /* Forzar que las columnas se ajusten al ancho disponible */
+}
+
+.sena-table1 th,
+.sena-table1 td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+  font-size: 0.875rem;
+  vertical-align: middle;
+  white-space: normal; /* Permitir que el texto se envuelva */
+  word-wrap: break-word; /* Asegurar que las palabras largas se rompan */
+  text-align: center;
+  
+}
+
+.sena-table th,
+.sena-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+  font-size: 0.875rem;
+  vertical-align: middle;
+  white-space: normal; /* Permitir que el texto se envuelva */
+  word-wrap: break-word; /* Asegurar que las palabras largas se rompan */
+  text-align: center;
+}
+
+.sena-table1 th {
+  background-color: #f5f5f5;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.sena-table1 td {
+  background-color: #fff;
+}
+
+.sena-table1 td input,
+.sena-table1 td select {
+  width: 100%;
+  padding: 6px;
+  font-size: 0.875rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+  min-width: 0; /* Permitir que el input se ajuste al ancho de la celda */
+}
+
+.sena-table1 td input[type="checkbox"] {
+  width: auto;
+  margin: 0;
+}
+
+/* Ajuste de columnas para mejor distribución */
+.sena-table1 th:nth-child(1),
+.sena-table1 td:nth-child(1) { width: 4%; } /* N° */
+.sena-table1 th:nth-child(2),
+.sena-table1 td:nth-child(2) { width: 15%; } /* NOMBRES Y APELLIDOS */
+.sena-table1 th:nth-child(3),
+.sena-table1 td:nth-child(3) { width: 10%; } /* N°. DOCUMENTO */
+.sena-table1 th:nth-child(4),
+.sena-table1 td:nth-child(4) { width: 7%; } /* PLANTA */
+.sena-table1 th:nth-child(5),
+.sena-table1 td:nth-child(5) { width: 7%; } /* CONTRATISTA */
+.sena-table1 th:nth-child(6),
+.sena-table1 td:nth-child(6) { width: 7%; } /* OTRO */
+.sena-table1 th:nth-child(7),
+.sena-table1 td:nth-child(7) { width: 10%; } /* DEPENDENCIA / EMPRESA */
+.sena-table1 th:nth-child(8),
+.sena-table1 td:nth-child(8) { width: 12%; } /* CORREO ELECTRÓNICO */
+.sena-table1 th:nth-child(9),
+.sena-table1 td:nth-child(9) { width: 8%; } /* TELÉFONO / EXT. */
+.sena-table1 th:nth-child(10),
+.sena-table1 td:nth-child(10) { width: 7%; } /* AUTORIZA GRABACIÓN */
+.sena-table1 th:nth-child(11),
+.sena-table1 td:nth-child(11) { width: 12%; } /* FIRMA O PARTICIPACIÓN VIRTUAL */
+.sena-table1 th:nth-child(12),
+.sena-table1 td:nth-child(12) { width: 5%; } /* FIRMA O PARTICIPACIÓN VIRTUAL */
+
+/* Botón para agregar filas */
+.add-row-button {
+  padding: 8px 16px;
+  border: none;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  background-color: #27ae60;
+  color: white;
+  margin-top: 12px;
+  transition: all 0.3s ease;
+}
+
+.add-row-button:hover {
+  background-color: #219955;
+  transform: scale(1.03);
+}
+
+
+
+.delete-row-button {
+  background: transparent;
+  border: none;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  border: none;
+  
+}
+
+.delete-row-button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+
+/* ------------------------------------------------- */
+/* Modal flotante de “Plan guardado exitosamente”     */
+/* ------------------------------------------------- */
+.success-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Fondo semitransparente (más tenue que el modal de asistencia) */
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000; /* Debe estar por encima del modal de asistencia */
+}
+
+.success-modal-content {
+background-color: #ffffff;
+  padding: 20px 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+  max-width: 400px;
+  text-align: center;
+  animation: fadeInOut 2s ease-in-out forwards; 
+}
+
+.success-modal-content h2 {
+  margin: 0 0 10px;
+  color: #2d3748;
+  font-size: 1.4rem;
+}
+
+.success-modal-content p {
+  margin: 0;
+  color: #4a5568;
+  font-size: 1rem;
+}
+
+/* ------------------------------------------------- */
+/* Animación de aparición/desvanecimiento (2 segundos) */
+/* ------------------------------------------------- */
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* ------------------------------------------------- */
+/* Mensaje de error estándar bajo el formulario       */
+/* ------------------------------------------------- */
+.error-message {
+  color: #dc3545;
+  font-size: 0.85rem;
+  margin-top: 8px;
+  text-align: center;
+}
+
